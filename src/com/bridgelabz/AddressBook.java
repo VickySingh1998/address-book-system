@@ -1,35 +1,62 @@
 package com.bridgelabz;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class AddressBook {
-    private static Scanner scanner = new Scanner(System.in);
-    static ArrayList<Contact> contactDetail = new ArrayList<>();
+    ArrayList<Contact> contactDetails = new ArrayList<>();
+    static Scanner scanner = new Scanner(System.in);
 
-    private static ArrayList<Contact> addContact() {
-        Contact contact = new Contact();
-        System.out.println("Enter First Name:");
-        contact.setFirstName(scanner.nextLine());
-        System.out.println("Enter Last Name:");
-        contact.setLastName(scanner.nextLine());
-        System.out.println("Enter Address:");
-        contact.setAddress(scanner.nextLine());
-        System.out.println("Enter City :");
-        contact.setCity(scanner.nextLine());
-        System.out.println("Enter State :");
-        contact.setState(scanner.nextLine());
-        System.out.println("Enter Zip Code :");
-        contact.setZipCode(scanner.next());
-        System.out.println("Enter Phone Number :");
-        contact.setPhoneNumber(scanner.next());
-        System.out.println("Enter Email :");
-        contact.setEmail(scanner.next());
+    public void AddDetails() {
 
-        contactDetail.add(contact);
-        return contactDetail;
+        Scanner scanner = new Scanner(System.in);
+        Contact details = new Contact();
+        System.out.println("Enter the First Name ");
+        details.setFirstName(scanner.nextLine());
+        System.out.println("Enter the Last Name ");
+        details.setLastName(scanner.nextLine());
+        System.out.println("Enter the Address ");
+        details.setAddress(scanner.nextLine());
+        System.out.println("Enter the City ");
+        details.setCity(scanner.nextLine());
+        System.out.println("Enter the State ");
+        details.setState(scanner.nextLine());
+        System.out.println("Enter the Zip Code ");
+        details.setZipCode(scanner.nextInt());
+        System.out.println("Enter the Phone Number ");
+        details.setPhoneNumber(scanner.nextInt());
+        System.out.println("Enter the Email ");
+        details.setEmail(scanner.next());
+
+        contactDetails.add(details);
     }
+    public void display() {
+
+        System.out.println(contactDetails);
+    }
+
     public static void main(String[] args) {
-        addContact();
-        System.out.println(contactDetail);
+
+        int i = 0;
+        System.out.println("Welcome to Address Book Management System");
+        AddressBook details = new AddressBook();
+
+        while (i == 0) {
+
+            System.out.println("1.Add details.\n2.Display Contacts.");
+            int choose = scanner.nextInt();
+            switch (choose) {
+                case 1:
+                    details.AddDetails();
+                    break;
+                case 2:
+                    details.display();
+                    break;
+                default:
+                    System.out.println("Wrong option");
+                    details.display();
+                    break;
+            }
+        }
     }
 }

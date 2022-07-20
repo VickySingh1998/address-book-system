@@ -6,8 +6,8 @@ public class Contact {
     private static String address;
     private static String city;
     private static String state;
-    private static String zipCode;
-    private static String phoneNumber;
+    private static int zipCode;
+    private static int phoneNumber;
     private static String email;
 
     public Contact() {
@@ -61,19 +61,19 @@ public class Contact {
         Contact.state = state;
     }
 
-    public static String getZipCode() {
+    public static int getZipCode() {
         return zipCode;
     }
 
-    public static void setZipCode(String zipCode) {
+    public static void setZipCode(int zipCode) {
         Contact.zipCode = zipCode;
     }
 
-    public static String getPhoneNumber() {
+    public static int getPhoneNumber() {
         return phoneNumber;
     }
 
-    public static void setPhoneNumber(String phoneNumber) {
+    public static void setPhoneNumber(int phoneNumber) {
         Contact.phoneNumber = phoneNumber;
     }
 
