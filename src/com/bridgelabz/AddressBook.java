@@ -7,7 +7,7 @@ public class AddressBook {
     ArrayList<Contact> contactDetails = new ArrayList<>();
     static Scanner scanner = new Scanner(System.in);
 
-    public void AddDetails() {
+    public void addDetails() {
 
         Scanner scanner = new Scanner(System.in);
         Contact details = new Contact();
@@ -47,7 +47,7 @@ public class AddressBook {
             int choose = scanner.nextInt();
             switch (choose) {
                 case 1:
-                    details.AddDetails();
+                    details.addDetails();
                     break;
                 case 2:
                     details.display();
