@@ -37,12 +37,11 @@ public class AddressBook {
 
     public static void main(String[] args) {
 
-        int i = 0;
+        boolean check = false;
         System.out.println("Welcome to Address Book Management System");
         AddressBook details = new AddressBook();
 
-        while (i == 0) {
-
+        do {
             System.out.println("1.Add details.\n2.Display Contacts.");
             int choose = scanner.nextInt();
             switch (choose) {
@@ -58,5 +57,6 @@ public class AddressBook {
                     break;
             }
         }
+        while (!check);
     }
 }
