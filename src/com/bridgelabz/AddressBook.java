@@ -63,16 +63,16 @@ public class AddressBook {
                         contactDetails.get(i).setState(scanner.next());
                         break;
                     case 6:
-                        System.out.println("Enter Email");
-                        contactDetails.get(i).setEmail(scanner.next());
-                        break;
-                    case 7:
                         System.out.println("Enter Zip");
                         contactDetails.get(i).setZipCode(scanner.nextInt());
                         break;
-                    case 8:
+                    case 7:
                         System.out.println("Enter phone number");
                         contactDetails.get(i).setPhoneNumber(scanner.nextInt());
+                        break;
+                    case 8:
+                        System.out.println("Enter Email");
+                        contactDetails.get(i).setEmail(scanner.next());
                         break;
                 }
                 System.out.println(contactDetails);
