@@ -62,10 +62,6 @@ public class AddressBook {
                         System.out.println("Enter State");
                         contactDetails.get(i).setState(scanner.next());
                         break;
-                    case 6:
-                        System.out.println("Enter Email");
-                        contactDetails.get(i).setEmail(scanner.next());
-                        break;
                     case 7:
                         System.out.println("Enter Zip");
                         contactDetails.get(i).setZipCode(scanner.nextInt());
@@ -73,6 +69,10 @@ public class AddressBook {
                     case 8:
                         System.out.println("Enter phone number");
                         contactDetails.get(i).setPhoneNumber(scanner.nextInt());
+                        break;
+                    case 6:
+                        System.out.println("Enter Email");
+                        contactDetails.get(i).setEmail(scanner.next());
                         break;
                 }
                 System.out.println(contactDetails);
@@ -85,6 +85,18 @@ public class AddressBook {
 
         System.out.println(contactDetails);
     }
+    public void deleteDetails(){
+        System.out.println("Confirm your first name to delete details: ");
+        String name = scanner.next();
+
+        for (int i = 0; i < contactDetails.size(); i++) {
+            if (contactDetails.get(i).getFirstName().equals(name)) {
+                System.out.println("Select form below to change: ");
+                contactDetails.remove(i);
+            }
+        }
+        System.out.println(contactDetails);
+    }
 
     public static void main(String[] args) {
 
@@ -93,7 +105,7 @@ public class AddressBook {
         AddressBook details = new AddressBook();
 
         do {
-            System.out.println("1.Add details.\n2.Display Contacts. \n3.Edit Contacts.");
+            System.out.println("1.Add details.\n2.Display Contacts. \n3.Edit Contact. \n4.Delete Contact");
             int choose = scanner.nextInt();
             switch (choose) {
                 case 1:
@@ -104,6 +116,9 @@ public class AddressBook {
                     break;
                 case 3:
                     details.editDetails();
+                    break;
+                case 4:
+                    details.deleteDetails();
                     break;
                 default:
                     System.out.println("Wrong option");
